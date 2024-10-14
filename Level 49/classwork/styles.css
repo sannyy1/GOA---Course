@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p, h1{
+    color: white;
+}
+
+.info{
+    display: flex;
+    gap: 10px;
+}
+
+.contact {
+    background-color: rgb(0, 211, 211);
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    color: rgb(205, 205, 205);
+}

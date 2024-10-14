@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #5eff00;
+    transition: transform 0.3s ease;
+}
+
+.box1 {
+    transform-origin: top left;
+}
+.box1:hover {
+    transform: translate(30px, 30px) scale(1.2);
+}
+.box1:active {
+    transform: translate(-15px, -15px) scale(1.5);
+}
+
+.box2 {
+    transform-origin: center;
+}
+.box2:hover {
+    transform: rotate(45deg) scale(1.3);
+}
+.box2:active {
+    transform: rotate(-45deg) scale(0.8);
+}
+
+.box3 {
+    transform-origin: center;
+}
+.box3:hover {
+    transform: skew(20deg, 15deg) scale(1.2);
+}
+.box3:active {
+    transform: skew(-20deg, -15deg) scale(0.9);
+}
+
+.box4 {
+    transform-origin: bottom right;
+}
+.box4:hover {
+    transform: translate(-25px, -25px) rotate(30deg);
+}
+.box4:active {
+    transform: translate(10px, 10px) rotate(-30deg);
+}
+
+.box5 {
+    transform-origin: top right;
+}
+.box5:hover {
+    transform: scale(1.1) translateY(20px) rotate(10deg);
+}
+.box5:active {
+    transform: scale(0.9) translateY(-20px) rotate(-10deg);
+}

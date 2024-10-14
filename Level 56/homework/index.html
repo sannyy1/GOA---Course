@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer Animation</title>
+    <style>
+        #image {
+            width: 300px;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+<img id="image" src="image1.jpg" alt="Image" style="opacity: 1;">
+
+<div>
+    <button onclick="changeImage('image1.jpg')">Image 1</button>
+    <button onclick="changeImage('image2.jpg')">Image 2</button>
+    <button onclick="changeImage('image3.jpg')">Image 3</button>
+</div>
+
+<script>
+    function changeImage(imageSrc) {
+        const img = document.getElementById('image');
+        img.style.opacity = '0';
+        setTimeout(() => {
+            img.src = imageSrc;
+            img.style.opacity = '1';
+        }, 500);
+    }
+</script>
+
+</body>
+</html>

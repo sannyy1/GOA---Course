@@ -1,0 +1,16 @@
+body { 
+    text-align: center; 
+    justify-content: center;
+  
+  }
+    
+  .heart {
+      font-size: 100px;
+      color: #e00;
+      animation: beat .25s infinite alternate;
+      transform-origin: center;
+  }
+  
+  @keyframes beat{
+      to { transform: scale(1.2); }
+  }

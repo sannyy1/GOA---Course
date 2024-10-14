@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: Roboto;
+}
+
+td, th {
+    box-shadow: 0 4px 8px rgb(253, 186, 186);
+}
+table {
+border-collapse: collapse;
+
+border-radius: 30px;
+width: 700px;
+}
+
+tr:first-child {
+    background-color: #f96635;
+    color: white;
+}
+
+tr:nth-child(3) {
+    background-color: #f5edea;
+}
+
+tr:nth-child(5) {
+    background-color: #f5edea;
+}

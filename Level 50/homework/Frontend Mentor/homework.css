@@ -1,0 +1,79 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: hsl(216, 50%, 16%);
+}
+
+.card {
+    width: 300px;
+    background: hsl(217, 54%, 11%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card__content {
+    padding: 20px;
+}
+
+.card__title {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+}
+
+.card__description {
+    font-size: 0.9em;
+    color: hsl(215, 51%, 70%);
+    margin: 10px 0;
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: hsl(215, 51%, 70%);
+}
+
+.card__info-item {
+    display: flex;
+    align-items: center;
+}
+
+.card__info-icon {
+    margin-right: 5px;
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: hsl(216, 50%, 16%);
+    border-top: 1px solid hsl(215, 51%, 30%);
+}
+
+.card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card__author {
+    color: hsl(215, 51%, 70%);
+}
+
+.card__author-link {
+    color: white;
+    text-decoration: none;
+}
