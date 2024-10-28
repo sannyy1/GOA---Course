@@ -1,0 +1,105 @@
+:root {
+    --purple100: hsl(254, 88%, 90%);
+    --purple500: hsl(256, 67%, 59%);
+    --yellow100: hsl(31, 66%, 93%);
+    --yellow500: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    font: 400 18px 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: hsl(0, 0%, 96%);
+    color: var(--black);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 83px 16px;
+}
+
+
+.gridContent {
+    display: grid;
+    width: 100%;
+    max-width: 1120px;
+    grid-template-areas: "cardGroup card-1 card-1 card-4"
+                         "cardGroup card-1 card-1 card-4"
+                         "cardGroup card-1 card-1 card-4";
+    grid-template-columns: repeat(4, minmax(min-content, 256px));
+    grid-template-rows: 323px 247px 247px;
+    gap: 32px;
+
+    .card {
+        border-radius: 10px;
+    }
+}
+
+h1, .title-2, .title-3, .title-4 {
+    line-height: 95%;
+    font-weight: 500;
+}
+
+.title-2 {
+    font-size: 40px;
+}
+
+.title-3 {
+    font-size: 35px;
+
+}
+
+.title-4 {
+    font-size: 30px;
+}
+
+img {
+    width: 100%;
+}
+
+.italicText {
+    font-style: italic;
+}
+
+#card-1 {
+    grid-area: card-1;
+    background-color: var(--purple500);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 60px;
+        text-align: center;
+        color: var(--white);
+
+        .colorText {
+            color: var(--yellow500);
+        }
+    }
+
+    .image {
+        max-width: 190px;
+        margin: 22px 0 0;
+    }
+
+    p {
+        color: var(--yellow100);
+    }
+}
+
