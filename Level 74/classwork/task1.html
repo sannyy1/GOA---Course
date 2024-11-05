@@ -1,0 +1,26 @@
+<!--შექმენით div ბლოკი და javascript-ისა innerHTML ატრიბუტის საშვალებით დაამატეთ რამდენიმე პარაგრაფი (მინიმუმ 3), 2 ღილაკი-->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div ბლოკი</title>
+</head>
+<body>
+
+<div id="myDiv"></div>
+
+<script>
+    const div = document.getElementById('myDiv');
+    div.innerHTML = `
+        <p>ეს არის პირველი პარაგრაფი.</p>
+        <p>ეს არის მეორე პარაგრაფი.</p>
+        <p>ეს არის მესამე პარაგრაფი.</p>
+        <button onclick="alert('პირველი ღილაკი დაკლიკდა!')">ღილაკი 1</button>
+        <button onclick="alert('მეორე ღილაკი დაკლიკდა!')">ღილაკი 2</button>
+    `;
+</script>
+
+</body>
+</html>

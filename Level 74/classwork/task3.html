@@ -1,0 +1,57 @@
+<!--შექმენით ფორმა რომელშიც მომხმარებელს შემოატანინებთ სახელს, გვარსა და ემაილს. შემდეგ ეს მონაცემები დაამატეთ ცხრილში ნასწავლი მეთოდების საშვალებით, ასევე დაამატეთ წაშლის ფუნქცია ცხრილში ელემენტზე დაჭერისას-->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მომხმარებლის ფორმა და ცხრილი</title>
+</head>
+<body>
+
+<form id="userForm">
+    <input type="text" id="firstName" placeholder="სახელი" required>
+    <input type="text" id="lastName" placeholder="გვარი" required>
+    <input type="email" id="email" placeholder="ემაილი" required>
+    <button type="submit">დაამატე</button>
+</form>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>სახელი</th>
+            <th>გვარი</th>
+            <th>ემაილი</th>
+        </tr>
+    </thead>
+    <tbody id="userTable"></tbody>
+</table>
+
+<script>
+    const form = document.getElementById('userForm');
+    const tableBody = document.getElementById('userTable');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${firstName}</td>
+            <td>${lastName}</td>
+            <td>${email}</td>
+        `;
+        tr.addEventListener('click', function() {
+            tableBody.removeChild(tr);
+        });
+        
+        tableBody.appendChild(tr);
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>

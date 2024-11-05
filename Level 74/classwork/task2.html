@@ -1,0 +1,27 @@
+<!--შექმენით დაულაგებელი სია პროგრამირების ენების შესახებ და ნასწავლი მეთოდების: document.createElement() და document.appendChild() საშვალებით ჩაამატეთ სიის ელემენტები, რომლებშიც ეწერება სხვადასხვა პროგრამირების ენის სახელი-->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დაუწერელი სია პროგრამირების ენების შესახებ</title>
+</head>
+<body>
+
+<ul id="programmingLanguages"></ul>
+
+<script>
+    const languages = ['JavaScript', 'Python', 'Java', 'C#', 'Ruby', 'Go', 'Rust'];
+
+    const ul = document.getElementById('programmingLanguages');
+
+    languages.forEach(language => {
+        const li = document.createElement('li');
+        li.textContent = language;
+        ul.appendChild(li);
+    });
+</script>
+
+</body>
+</html>

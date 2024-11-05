@@ -1,0 +1,39 @@
+<!--4) დაწერეთ პროგრამა, რომელიც ყოველ 5 წამში შეცვლის საიტზე არსებული პარაგრაფის textContent-ს-->
+
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პარაგრაფის ტექსტის შეცვლა</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>პარაგრაფის ტექსტის შეცვლა</h1>
+    <p id="dynamicText">ეს არის პირველი ტექსტი.</p>
+
+    <script>
+        const texts = [
+            "this is text number one.",
+            "this is text number two.",
+            "this is text number three",
+            "this is text number four.",
+            "this is text number five"
+        ];
+
+        function changeText() {
+            const randomText = texts[Math.floor(Math.random() * texts.length)];
+            document.getElementById('dynamicText').textContent = randomText;
+        }
+
+        setInterval(changeText, 5000);
+    </script>
+</body>
+</html>

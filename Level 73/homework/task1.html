@@ -1,0 +1,83 @@
+<!--შეცვაკლეთ ტექსტის შიგტავსი js-ის გამოყენებით და ღილაკზე დაჭერისას console.log -ში გამოიტანეთ
+>შექმენით div ბლოკი და ჩაწერეთ შიგნით ტექსტი, შემდეგ js ის ფაილის გამოყენებით შეაბრუნეთ მათი ფერები, ანუ div ბლოკის ფერი მიანიჭეთ ტექსტს და ტექსტის ფერი დივ ბლოკს
+>ID ის ელემენტისთვის გაწერით, ღილაკზე დაკლიკვისას გაქრეთ ეს ელემენტი ეკრანიდან (გამოიყენეთ სტილი display: none
+>გაუწერეთ სამ ელემენტს ერთი და იგივე კლასი და ღილაკზე დაჭერისას შეუცვალეთ მათ ფონტი-->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript მაგალითები</title>
+    <style>
+        .text {
+            font-size: 20px;
+            color: white;
+        }
+        .color-block {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .changeable {
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript მაგალითები</h1>
+    
+    <div class="color-block" id="colorDiv">
+        <p class="text">ეს არის ტექსტი.</p>
+    </div>
+
+    <button id="changeTextButton">ტექსტის შეცვლა</button>
+    <button id="swapColorsButton">ფერების გაცვლა</button>
+    <button id="hideElementButton">ელემენტის გაქრობა</button>
+    
+    <div class="changeable">ელემენტი 1</div>
+    <div class="changeable">ელემენტი 2</div>
+    <div class="changeable">ელემენტი 3</div>
+    <button id="changeFontButton">ფონტის შეცვლა</button>
+
+    <script>
+        // 1. ტექსტის შეცვლა და console.log-ში გამოჩენა
+        document.getElementById('changeTextButton').addEventListener('click', () => {
+            const newText = "ახალი ტექსტი";
+            const textElement = document.querySelector('.text');
+            textElement.textContent = newText;
+            console.log(newText);
+        });
+
+        // 2. ფერების გაცვლა
+        document.getElementById('swapColorsButton').addEventListener('click', () => {
+            const textElement = document.querySelector('.text');
+            const colorDiv = document.getElementById('colorDiv');
+            const tempColor = textElement.style.color;
+            textElement.style.color = colorDiv.style.backgroundColor; 
+            colorDiv.style.backgroundColor = tempColor; 
+        });
+
+        // 3. ელემენტის გაქრობა
+        document.getElementById('hideElementButton').addEventListener('click', () => {
+            const colorDiv = document.getElementById('colorDiv');
+            colorDiv.style.display = 'none'; 
+        });
+
+        // 4. ფონტის შეცვლა
+        document.getElementById('changeFontButton').addEventListener('click', () => {
+            const changeableElements = document.querySelectorAll('.changeable');
+            changeableElements.forEach(element => {
+                element.style.fontFamily = 'Arial, sans-serif';
+            });
+        });
+    </script>
+
+</body>
+</html>

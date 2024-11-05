@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>To-Do List</h1>
+<input type="text" id="taskInput" placeholder="დამატეთ დავალება">
+<button id="addButton">დაამატე</button>
+<ul id="taskList"></ul>
+<button id="clearButton">ყველას გაწმენდა</button>
+
+<script>
+    const addButton = document.getElementById('addButton');
+    const taskInput = document.getElementById('taskInput');
+    const taskList = document.getElementById('taskList');
+    const clearButton = document.getElementById('clearButton');
+
+    addButton.addEventListener('click', function() {
+        const taskText = taskInput.value;
+        if (taskText === '') return;
+        
+        const li = document.createElement('li');
+        li.textContent = taskText;
+
+        const editButton = document.createElement('button');
+        editButton.textContent = 'მოწვდვა';
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'წაშლა';
+
+        editButton.addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.value = taskText;
+            li.textContent = '';
+            li.appendChild(input);
+            const saveButton = document.createElement('button');
+            saveButton.textContent = 'შენახვა';
+            li.appendChild(saveButton);
+
+            saveButton.addEventListener('click', function() {
+                li.textContent = input.value;
+                li.appendChild(editButton);
+                li.appendChild(deleteButton);
+            });
+        });
+
+        deleteButton.addEventListener('click', function() {
+            taskList.removeChild(li);
+        });
+
+        li.appendChild(editButton);
+        li.appendChild(deleteButton);
+        taskList.appendChild(li);
+        taskInput.value = '';
+    });
+
+    clearButton.addEventListener('click', function() {
+        while (taskList.firstChild) {
+            taskList.removeChild(taskList.firstChild);
+        }
+    });
+</script>
+
+</body>
+</html>

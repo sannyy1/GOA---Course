@@ -1,0 +1,60 @@
+<!--1) შექმენით ფორმა და ცხრილი, ფორმაში იქონიეთ 4 შესატანი ველი, მომხმარებლმა უნდა შემოიტანოს სახელი, იმეილი, პაროლი და ფბ ლინკი, როდესაც ფორმა დადასტურდება როგორც იცით გვერდი ავტომატურად დარეფრეშდება, გათიშეთ ეს ქმედება preventDefault() მეთოდის დახმარებით, დადასტურების შემდეგ წამოიღეთ შემოტანილი მნიშვნელობები ინფუთებიდან name ატრიბუტის დახმარებით, ყოველ დადასტურებაზე ცხრილში შექმენით ახალი რიგი და დაამატეთ ეს მნიშვნელობები, რომელიც გამოჩნდება გვერდზე-->
+
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ფორმა და ცხრილი</title>
+</head>
+<body>
+
+<h1>მომხმარებლის ფორმა</h1>
+<form id="userForm">
+    <input type="text" name="name" placeholder="სახელი" required>
+    <input type="email" name="email" placeholder="ემაილი" required>
+    <input type="password" name="password" placeholder="პაროლი" required>
+    <input type="text" name="fbLink" placeholder="ფბ ლინკი" required>
+    <button type="submit">დადასტურება</button>
+</form>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>სახელი</th>
+            <th>ემაილი</th>
+            <th>პაროლი</th>
+            <th>ფბ ლინკი</th>
+        </tr>
+    </thead>
+    <tbody id="userTable"></tbody>
+</table>
+
+<script>
+    const form = document.getElementById('userForm');
+    const tableBody = document.getElementById('userTable');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const password = formData.get('password');
+        const fbLink = formData.get('fbLink');
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${name}</td>
+            <td>${email}</td>
+            <td>${password}</td>
+            <td>${fbLink}</td>
+        `;
+        
+        tableBody.appendChild(tr);
+        form.reset();
+    });
+</script>
+
+</body>
+</html>

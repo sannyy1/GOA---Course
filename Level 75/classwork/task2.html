@@ -1,0 +1,47 @@
+<!--2) შექმენით პროექტი სახელწოდებით todolist, გექნებათ ერთი ფორმა და ერთი დალაგებული სია, როდესაც ფორმა დადასტურდება წამოიღეთ დასამატებელი  მნიშნელობა და შექმენით ახალი li თეგი რომელსაც მიანეჭბთ დადასტურებულ მნიშვნელობას, ახალ უნიკალურ id_ს და მოვლენის მსმენელს რომელიც მოუსმენს დაკლიკების მოვლენას, როცა დაკლიკება მოხდება უნდა წაიშალოს კონკრეტულად ის ელემენტი რომელზეც მოხდა მოვლენა-->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+
+<h1>To-Do List</h1>
+<form id="todoForm">
+    <input type="text" id="todoInput" placeholder="დავალება" required>
+    <button type="submit">დამატება</button>
+</form>
+
+<ul id="todoList"></ul>
+
+<script>
+    const form = document.getElementById('todoForm');
+    const input = document.getElementById('todoInput');
+    const todoList = document.getElementById('todoList');
+    let taskId = 0;
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const taskText = input.value;
+
+        const li = document.createElement('li');
+        li.textContent = taskText;
+        li.id = 'task_' + taskId;
+        taskId++;
+
+        li.addEventListener('click', function() {
+            todoList.removeChild(li);
+        });
+
+        todoList.appendChild(li);
+        input.value = '';
+    });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,47 @@
+<!--შექმენით ჯეირანის თამაში, საიტზე აიღეთ 3 ღილაკი შესაბამისი არჩევანით: ქვა, ბადე, მაკრატელი. საიტზე მომხმარებელს უნდა შეეძლოს ჯეირანის წესების მქონე თამაში. გამოიყენეთ Math.random-->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock, paper, scissors</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        button { margin: 10px; padding: 10px; font-size: 16px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>rock, paper, scissors</h1>
+    <button onclick="play('rock')">rock</button>
+    <button onclick="play('paper')">paper</button>
+    <button onclick="play('scissors')">scissors</button>
+
+    <div id="result"></div>
+
+    <script>
+        function play(userChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            let result = '';
+
+            if (userChoice === computerChoice) {
+                result = `lucky you! you choose  "${userChoice}".`;
+            } else if (
+                (userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'paper' && computerChoice === 'rock') ||
+                (userChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = `congratulation! you won! you choose "${userChoice}", bot choose "${computerChoice}".`;
+            } else {
+                result = `you lost! you choose "${userChoice}", bot choose "${computerChoice}".`;
+            }
+
+           
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
