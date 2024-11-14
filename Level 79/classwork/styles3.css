@@ -1,0 +1,19 @@
+.button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .div-box {
+    display: none;
+    padding: 20px;
+    background-color: #f39c12;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .button:hover + .div-box {
+    display: block;
+    opacity: 1;
+  }
